@@ -1,6 +1,6 @@
 # Pagina para acesso básico ao MongoDB
 
-### Desenvolvido em JavaScript e Node.js (versão 16)
+### Desenvolvido em TypeScript e Node.js (versão 16)
 
 Projeto utilizado como base de ensino, e treinamento, dos cursos de **Informática**,
 principalmente de nível técnico - **Soitech**.

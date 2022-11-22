@@ -1,8 +1,14 @@
 import { Request, Response } from 'express';
 
 import { Product } from '../models/Product';
+import User from '../models/User';
 
-export const home = (req: Request, res: Response)=>{
+export const home = async (req: Request, res: Response) => {
+    //let usuarios = await User.find({}); //todos
+    //let usuarios = await User.findOne({ email: 'dennyazevedo@gmail.com' }); //unico
+    let usuarios = await User.findById('636f003790976a2cf544c037'); //pelo id
+    console.log("USUARIOS", usuarios);
+    
     let age: number = 58;
     let showOld: boolean = false;
 
