@@ -24,8 +24,24 @@ export const home = async (req: Request, res: Response) => {
     //let usuarios = await User.find({ age: { $gt: 25 } }).sort({ age: -1 });
     //let usuarios = await User.find({ age: { $gt: 25 } }).sort({ email: 1 });
     //let usuarios = await User.find({ age: { $gt: 25 } }).sort({ "fullName.firstName": -1 });
-    let usuarios = await User.find({ age: { $gt: 25 } }).sort({ "fullName.firstName": 1, age: -1 });
-    
+    //limitano o número de exibições
+    //let usuarios = await User.find({age: { $gt: 18 }}).sort({ "fullName.firstName": 1, age: -1 }).limit(2);
+    /*
+        Uso de paginação:
+        exemplo:
+
+        usuarios = 10.000 registros
+        página está mostrando de 20 em 20 registros.
+
+        página 0 = 1 até 20 (pule o registros e exiba 20)
+        página 1 = 21 até 40 (pule 20 registros e exiba 20)
+        página 2 = 41 até 60 (pule 40 registros e exiba 20)
+
+        página n = (pule n*20 registros e exiba 20)
+    */
+    //let usuarios = await User.find({age: { $gt: 18 }}).sort({ "fullName.firstName": 1, age: -1 }).skip(0).limit(2);//página 0
+    let usuarios = await User.find({age: { $gte: 18 }}).sort({ "fullName.firstName": 1, age: -1 }).skip(2).limit(2);//página 1
+
     console.log("USUARIOS", usuarios);
     
     let age: number = 58;
