@@ -63,22 +63,21 @@ export const home = async (req: Request, res: Response) => {
     let resultado = await newUser.save();
     console.log("Novo Usuário", resultado);
     */
-    let age: number = 58;
-    let showOld: boolean = false;
+    //três formas principais de atualizar dados
 
-    if(age > 50) {
-        showOld = true;
-    }
+    //Atualizando diversos dados
+    //await User.updateMany({ age: { $lte: 18 } }, { age: 19 });
+    //Atualizando um registro - documento
+    //await User.updateOne({ email: 'marialeite@gmail.com' }, { age: 22 });
+    let paulo = await User.findOne({ email: 'paulocosta@gmail.com' });
+    paulo.fullName.lastName = "Costa Correia";
+    paulo.age = 35;
+    await paulo.save();
 
-    let list = Product.getAll();
-    let expensiveList = Product.getFromPriceAfter(12);
+    let users = await User.find({}).sort({'fullName.firstName': 1})
+
 
     res.render('pages/home', {
-        name: 'Denny',
-        lastName: 'Azevedo',
-        showOld,
-        products: list,
-        expensives: expensiveList,
-        frasesDoDia: []
+        users
     });
 };

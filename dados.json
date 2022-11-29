@@ -1,0 +1,103 @@
+{
+  "_id": {
+    "$oid": "636f003790976a2cf544c037"
+  },
+  "fullName": {
+    "firstName": "Denny",
+    "midleName": "Paulista",
+    "lastName": "Azevedo Filho"
+  },
+  "age": 58,
+  "email": "dennyazevedo@gmail.com",
+  "interests": [
+    "Programação",
+    "Tecnologia",
+    "História Militar",
+    "Motociclismo",
+    "Artes Marciais"
+  ]
+}
+
+{
+  "_id": {
+    "$oid": "637ce8e23b620e6b5289fc0f"
+  },
+  "fullName": {
+    "firstName": "Fulano",
+    "midleName": "Lopes",
+    "lastName": "Silva"
+  },
+  "age": 30,
+  "email": "fulanosilva@gmail.com",
+  "interests": [
+    "Programação",
+    "Tecnologia"
+  ]
+}
+
+{
+  "_id": {
+    "$oid": "637ce9483b620e6b5289fc10"
+  },
+  "fullName": {
+    "firstName": "Paulo",
+    "lastName": "Costa"
+  },
+  "age": 19,
+  "email": "paulocosta@gmail.com",
+  "interests": [
+    "Pizza",
+    "Futebol"
+  ]
+}
+
+{
+  "_id": {
+    "$oid": "638666144cd4e6a0a0b606e0"
+  },
+  "interests": [
+    "Arte",
+    "Pizza"
+  ],
+  "fullName": {
+    "firstName": "Maria",
+    "lastName": "Leite"
+  },
+  "email": "marialeite@gmail.com",
+  "age": 21,
+  "__v": 0
+}
+
+{
+  "_id": {
+    "$oid": "638668601aba966704c4a17f"
+  },
+  "fullName": {
+    "firstName": "Julia",
+    "midleName": "Luz",
+    "lastName": "Correia"
+  },
+  "interests": [
+    "Programação",
+    "Musica"
+  ],
+  "email": "juliacorreia@gmail.com",
+  "age": 33,
+  "__v": 0
+}
+
+{
+  "_id": {
+    "$oid": "638676d9e7522d6ad8a7d142"
+  },
+  "fullName": {
+    "firstName": "Julio",
+    "lastName": "Abreu"
+  },
+  "interests": [
+    "Carro,Futebol"
+  ],
+  "age": 38,
+  "email": "julioabreu@gmail.com",
+  "__v": 0
+}
