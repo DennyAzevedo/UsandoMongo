@@ -1,4 +1,5 @@
 import { Request, Response } from 'express';
+import User from "../models/User";
 
 export const nome = (req: Request, res: Response) => {
     let nome: string = req.query.nome as string;
@@ -29,4 +30,40 @@ export const idadeAction = (req: Request, res: Response) => {
         idade,
         mostrarIdade
     });
+};
+
+export const addUserAction = async (req: Request, res: Response) => {
+    let emptyFields = false;
+    let newUser = new User();
+    if (
+        req.body.firstName &&
+        req.body.lastName &&
+        req.body.email &&
+        req.body.age &&
+        req.body.interests
+    ) {
+        try {
+            console.log("usuário sendo adicionado!!");
+            let interests = req.body.interests.split(' ')
+            newUser.fullName.firstName = req.body.firstName;
+            if (req.body.midleName) {
+                newUser.fullName.midleName = req.body.midleName;
+            }
+            newUser.fullName.lastName = req.body.lastName;
+            newUser.age = parseInt(req.body.age);
+            newUser.email = req.body.email;
+            newUser.interests = interests
+            let resultado = await newUser.save()
+            console.log("usuário adicionado com sucesso!!");
+        } catch (error) {
+            console.log("usuário não adicionado!!");
+        }
+    } else {
+        emptyFields = true;
+    }
+    let users = await User.find({});
+    res.render('pages/home', {
+        emptyFields,
+        users
+    })
 };

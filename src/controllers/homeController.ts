@@ -40,10 +40,29 @@ export const home = async (req: Request, res: Response) => {
         página n = (pule n*20 registros e exiba 20)
     */
     //let usuarios = await User.find({age: { $gt: 18 }}).sort({ "fullName.firstName": 1, age: -1 }).skip(0).limit(2);//página 0
-    let usuarios = await User.find({age: { $gte: 18 }}).sort({ "fullName.firstName": 1, age: -1 }).skip(2).limit(2);//página 1
-
-    console.log("USUARIOS", usuarios);
-    
+    //let usuarios = await User.find({age: { $gte: 18 }}).sort({ "fullName.firstName": 1, age: -1 }).skip(2).limit(2);//página 1
+    //console.log("USUARIOS", usuarios);
+    //
+    //Criando dados no banco - método 01
+    /*
+    let newUser = await User.create({
+        fullName: { firstName: 'Maria', lastName: 'Leite' },
+        email: 'marialeite@gmail.com',
+        age: 21,
+        interests: ['Arte','Pizza']
+    });
+    console.log("Novo Usuário", newUser);*/
+    //
+    //Criando dados no banco - método 01
+    /*
+    let newUser = new User();
+    newUser.fullName = { firstName: 'Julia', midleName: 'Luz', lastName: 'Correia' };
+    newUser.email = 'juliacorreia@gmail.com';
+    newUser.age = 33;
+    newUser.interests = ['Programação', 'Musica'];
+    let resultado = await newUser.save();
+    console.log("Novo Usuário", resultado);
+    */
     let age: number = 58;
     let showOld: boolean = false;
 
