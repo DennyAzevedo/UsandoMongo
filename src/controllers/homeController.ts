@@ -69,10 +69,17 @@ export const home = async (req: Request, res: Response) => {
     //await User.updateMany({ age: { $lte: 18 } }, { age: 19 });
     //Atualizando um registro - documento
     //await User.updateOne({ email: 'marialeite@gmail.com' }, { age: 22 });
+    /*
     let paulo = await User.findOne({ email: 'paulocosta@gmail.com' });
     paulo.fullName.lastName = "Costa Correia";
     paulo.age = 35;
     await paulo.save();
+    */
+    
+    //Deletar dados
+    //await User.findOneAndDelete({ email: 'paulocosta@gmail.com' });
+    //let paulo = await User.findOne({ email: 'paulocosta@gmail.com' });
+    //await paulo.remove();
 
     let users = await User.find({}).sort({'fullName.firstName': 1})
 

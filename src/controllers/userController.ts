@@ -67,3 +67,19 @@ export const addUserAction = async (req: Request, res: Response) => {
         users
     })
 };
+
+export const incrementAgeAction = async (req: Request, res: Response) => {
+
+    let id = req.params.id
+    let user = await User.findById(id.toString())
+
+    await User.updateOne(
+        { _id: id }, //condição
+        { age: user ? user.age + 1 : '' } //dados para alteração
+    )
+
+    let users = await User.find({});
+    res.render('pages/home', {
+        users
+    })
+}
