@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 :root {
     --pagebg: #ebebeb;
     --main: #102581;
@@ -5,11 +7,18 @@
     --darkbg: #FFF;
     --lightbg: #000;
     --lighter: #444;
+    --headerbg: #204997;
+    --headertx: #ebebeb;
 }
 
 * {
     margin: 0;
     padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--pagebg);
 }
 
 .container {
@@ -21,6 +30,7 @@
 header {
     font-size: 28px;
     padding: 10px 0;
+    background-color: var(--headerbg);
 }
 
 header .container {
@@ -30,7 +40,7 @@ header .container {
 
 header a {
     text-decoration: none;
-    color: var(--main);
+    color: var(--headertx);
 }
 
 header input {
@@ -38,6 +48,7 @@ header input {
     font-size: 14px;
     width: 100%;
     max-width: 200px;
+    border-radius: 5px;
 }
 
 nav {
