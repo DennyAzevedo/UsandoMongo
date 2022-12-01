@@ -85,6 +85,8 @@ export const home = async (req: Request, res: Response) => {
 
 
     res.render('pages/home', {
-        users
+        users,
+        tituloPagina: "Página Principal",
+        tituloAba: "Lista Usuários - MongoDB"
     });
 };

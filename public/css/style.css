@@ -1,3 +1,67 @@
-body {
-    background-color: #FF0000;
+:root {
+    --pagebg: #ebebeb;
+    --main: #102581;
+    --bglink: rgba(0, 0, 0, 0.3);
+    --darkbg: #FFF;
+    --lightbg: #000;
+    --lighter: #444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1100px;
+    padding: 0 20px;
+    margin: auto;
+}
+
+header {
+    font-size: 28px;
+    padding: 10px 0;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+}
+
+header a {
+    text-decoration: none;
+    color: var(--main);
+}
+
+header input {
+    padding: 5px 10px;
+    font-size: 14px;
+    width: 100%;
+    max-width: 200px;
+}
+
+nav {
+    background: var(--main);
+    color: var(--darkbg);
+    padding: 15px 0;
+}
+
+nav ul {
+    list-style: none;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    color: var(--darkbg);
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+
+nav ul li.active a,
+nav ul li:hover a {
+    background: var(--bglink);
 }

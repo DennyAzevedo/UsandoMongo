@@ -1,7 +1,30 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
-    <title>Página Home</title>
+  <meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{tituloAba}}</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<link rel="icon" type="image/png" href="images/favicon.png" />
 </head>
 <body>
-    <h1>Novo Título</h1>
-    <hr/>
+	<header>
+		<div class="container">
+			<a href="">{{tituloPagina}}</a>
+			<form method="GET" action="">
+				<input
+					type="search"
+					name="q"
+					placeholder="Pesquise Interesse"
+				/>
+			</form>
+		</div>
+	</header>
+	<nav>
+		<ul>
+			<li class="{{#menu.home}}active{{/menu.home}}"><a href="/">Home</a></li>
+			<li class="{{#menu.cad}}active{{/menu.cad}}"><a href="/cadastro">Cadastro</a></li>
+			<li class="{{#menu.alte}}active{{/menu.alte}}"><a href="/alterar">Alterar</a></li>
+			<li class="{{#menu.exclu}}active{{/menu.exclu}}"><a href="/excluir">Excluir</a></li>
+		</ul>
+	</nav>
